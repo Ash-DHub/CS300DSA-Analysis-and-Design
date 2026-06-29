@@ -1,0 +1,26 @@
+Asha Donnon 
+CS 300  DSA: Analysis and Design
+
+
+Tree Data Structure Pseudocode  
+
+Course Record 
+Course     ID     Title     List of Prerequisites 
+ 
+Build Binary Search Tree  
+Read Course File    Attempt to open input file    If file cannot be accessed     Display file access error     End program    Create an empty Binary Search Tree    For every record in the file       Separate the record into tokens using commas       Verify the record contains both a course ID and title       If either value is missing         Report invalid record         Skip to next record       Create a Course record        Assign first token to course ID       Assign second token to course  title       Process all remaining tokens         Store each token as a prerequisite       Place the Course record into the Binary Search Tree    Close input file 
+ 
+Verify Course Relationships 
+Check Prerequisites    Visit each course stored in the tree       Examine every prerequisite attached to the course           Attempt to locate that prerequisite in the tree           If prerequisite cannot be located             Display prerequisite validation error             Identify the missing course ID 
+ 
+Add Course to Tree 
+Store Course    If no root node exists     Make new course the root node     End operation    Begin comparison at root    Repeat until insertion location is found       Compare course IDs       If new ID comes before current ID         Travel to left branch           If left branch is empty             Insert course at that location             Stop       Otherwise         Travel to right branch           If right branch is empty             Insert course at that location             Stop 
+ 
+Locate Individual Course 
+Find Course    Begin with root node    Repeat while a node exists       Compare requested ID to current node ID       If IDs match         Return course information       If requested ID is smaller         Continue down left branch       Otherwise         Continue down right branch    Return course not found 
+ 
+Display One Course 
+Show Course Details    Locate course using supplied ID    If course exists       Output course ID     Output course title       If prerequisite list contains entries           For each prerequisite             Display prerequisite ID       Otherwise         Output message indicating no prerequisites    Else       Output course lookup failure message 
+ 
+Display Entire Course Catalog 
+Print Course List    Perform in-order traversal    Visit left branch    Display current course ID and title    Visit right branch 
